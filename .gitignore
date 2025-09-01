@@ -42,3 +42,5 @@ coverage/
 .parcel-cache/
 .next/
 out/
+# Local Netlify folder
+.netlify
