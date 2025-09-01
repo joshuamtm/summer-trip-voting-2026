@@ -69,7 +69,8 @@ const VotingForm: React.FC = () => {
 
   const fetchTrips = async () => {
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/trip-options`);
+      const apiUrl = process.env.REACT_APP_API_URL === '' ? '' : (process.env.REACT_APP_API_URL || 'http://localhost:5000');
+      const response = await axios.get(`${apiUrl}/api/trip-options`);
       setOrderedTrips(response.data);
     } catch (error) {
       console.error('Error fetching trips:', error);
@@ -107,7 +108,8 @@ const VotingForm: React.FC = () => {
     };
 
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/votes`, {
+      const apiUrl = process.env.REACT_APP_API_URL === '' ? '' : (process.env.REACT_APP_API_URL || 'http://localhost:5000');
+      await axios.post(`${apiUrl}/api/votes`, {
         name: name.trim(),
         rankings,
         comments: comments.trim() || null,
