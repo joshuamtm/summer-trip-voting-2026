@@ -114,7 +114,7 @@ const tripOptions = [
         "Stargazing"
       ],
       accommodation: "Wilderness camping (basecamp or touring)",
-      estimatedCost: "$1000-1700 per person (guided)",
+      estimatedCost: "$400-700 per person (self-guided with gear rental)",
       highlights: [
         "True wilderness experience in pristine nature",
         "Over 1 million acres of lakes and forests",
@@ -125,7 +125,9 @@ const tripOptions = [
       ],
       benefits: [
         "Strongest group bonding through wilderness challenges",
-        "Accommodates various skill levels with right planning",
+        "Self-guided adventure - we set our own pace",
+        "More affordable than guided trips",
+        "Gear rental available (canoes, paddles, camping equipment)",
         "Unforgettable wilderness immersion",
         "Cooperative nature builds team spirit",
         "Less crowded than many national parks"
@@ -135,7 +137,9 @@ const tripOptions = [
         "Primitive conditions (no showers, basic facilities)",
         "Weather dependent with limited backup options",
         "Some mosquitoes and bugs even in August",
-        "Requires advance permit reservations"
+        "Requires advance permit reservations",
+        "Need to plan routes and logistics ourselves",
+        "Group needs some wilderness/camping experience"
       ]
     }
   }
