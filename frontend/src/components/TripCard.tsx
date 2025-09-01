@@ -6,9 +6,10 @@ interface TripCardProps {
   rank?: number;
   onRankSelect?: (tripId: number, rank: number) => void;
   isDraggable?: boolean;
+  dragHandleProps?: any;
 }
 
-const TripCard: React.FC<TripCardProps> = ({ trip, rank, onRankSelect, isDraggable = true }) => {
+const TripCard: React.FC<TripCardProps> = ({ trip, rank, onRankSelect, isDraggable = true, dragHandleProps }) => {
   const [expanded, setExpanded] = useState(false);
 
   const getRankBadgeColor = (rank: number | undefined) => {
@@ -38,13 +39,20 @@ const TripCard: React.FC<TripCardProps> = ({ trip, rank, onRankSelect, isDraggab
   };
 
   return (
-    <div 
-      className={`bg-white rounded-lg shadow-md p-6 mb-4 transition-all hover:shadow-lg ${
-        isDraggable ? 'cursor-move' : ''
-      }`}
-    >
+    <div className="bg-white rounded-lg shadow-md p-6 mb-4 transition-all hover:shadow-lg">
       <div className="flex items-start justify-between mb-4">
-        <div className="flex items-center">
+        <div className="flex items-center flex-1">
+          {isDraggable && dragHandleProps && (
+            <div 
+              {...dragHandleProps}
+              className="mr-3 cursor-move p-2 hover:bg-gray-100 rounded"
+              title="Drag to reorder"
+            >
+              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
+              </svg>
+            </div>
+          )}
           <span className="text-4xl mr-4">{getIcon(trip.id)}</span>
           <div>
             <h3 className="text-xl font-bold text-gray-800">{trip.title}</h3>

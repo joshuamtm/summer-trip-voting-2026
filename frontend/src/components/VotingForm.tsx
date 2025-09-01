@@ -42,8 +42,13 @@ const SortableItem: React.FC<SortableItemProps> = ({ trip, rank }) => {
   };
 
   return (
-    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-      <TripCard trip={trip} rank={rank} isDraggable={true} />
+    <div ref={setNodeRef} style={style}>
+      <TripCard 
+        trip={trip} 
+        rank={rank} 
+        isDraggable={true} 
+        dragHandleProps={{ ...attributes, ...listeners }}
+      />
     </div>
   );
 };
