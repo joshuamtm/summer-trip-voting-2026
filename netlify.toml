@@ -2,13 +2,14 @@
   base = "frontend"
   command = "npm run build"
   publish = "build"
+  functions = "netlify/functions"
 
 [build.environment]
-  REACT_APP_API_URL = "https://summer-trip-voting-api.onrender.com"
+  REACT_APP_API_URL = ""
 
 [[redirects]]
   from = "/api/*"
-  to = "https://summer-trip-voting-api.onrender.com/api/:splat"
+  to = "/.netlify/functions/api/api/:splat"
   status = 200
 
 [[redirects]]
