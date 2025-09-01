@@ -2,9 +2,16 @@
 
 A web application for friend groups to vote on summer trip options using ranked choice voting.
 
-## Features
+🌐 **Live Site**: https://carnegie-ai-proposal-mtm.netlify.app  
+📦 **GitHub Repository**: https://github.com/joshuamtm/summer-trip-voting
 
-- **Three Trip Options**: Mountain Adventure, Beach Paradise, European City Tour
+## Trip Options
+
+1. **Berkshires House Rental**: Two-week flexible stay in a large house for 8-10 people
+2. **Appalachian Trail Inn-to-Inn Hike**: 10-12 day hike with nightly inn stays
+3. **Boundary Waters Canoe Adventure**: 5-7 day wilderness canoe trip
+
+## Features
 - **Drag-and-Drop Ranking**: Intuitive interface to rank preferences
 - **Rich Trip Details**: Expandable cards with activities, highlights, and costs
 - **Vote Submission**: Name-based voting with optional comments
