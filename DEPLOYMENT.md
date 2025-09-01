@@ -2,7 +2,7 @@
 
 ## Current Deployment Status
 
-✅ **Frontend**: Deployed to Netlify at https://carnegie-ai-proposal-mtm.netlify.app
+✅ **Frontend**: Deployed to Netlify at https://summer-trip-voting-2026.netlify.app
 ✅ **Database**: Neon PostgreSQL database connected via Netlify DB
 ⏳ **Backend**: Ready for deployment (instructions below)
 

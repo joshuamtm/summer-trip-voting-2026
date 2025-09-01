@@ -2,8 +2,8 @@
 
 A web application for friend groups to vote on summer trip options using ranked choice voting.
 
-🌐 **Live Site**: https://carnegie-ai-proposal-mtm.netlify.app  
-📦 **GitHub Repository**: https://github.com/joshuamtm/summer-trip-voting
+🌐 **Live Site**: https://summer-trip-voting-2026.netlify.app  
+📦 **GitHub Repository**: https://github.com/joshuamtm/summer-trip-voting-2026
 
 ## Trip Options
 
