@@ -165,8 +165,8 @@ const VotingForm: React.FC = () => {
         </div>
         
         <p className="text-gray-700 mb-3">
-          Check out the detailed descriptions below, rank them in order of your preference (even if you're not 100% sure you can make it), 
-          add your name and any comments/concerns/excited reactions, and hit submit!
+          Check out the detailed descriptions below, rank them in order of your preference (even if you have no idea if you could or even would want to participate, 
+          we are interested in opinions!) -- add your name and any comments/concerns/excited reactions, and hit submit!
         </p>
         
         <p className="text-gray-700 italic">
