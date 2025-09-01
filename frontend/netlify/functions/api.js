@@ -127,8 +127,15 @@ const tripOptions = [
 ];
 
 exports.handler = async (event, context) => {
-  const path = event.path.replace('/.netlify/functions/api', '');
+  // Get the path after /.netlify/functions/api
+  let path = event.path.replace('/.netlify/functions/api', '');
+  // Ensure path starts with /
+  if (!path.startsWith('/')) {
+    path = '/' + path;
+  }
   const method = event.httpMethod;
+  
+  console.log('Request path:', path, 'Method:', method);
   
   // CORS headers
   const headers = {
@@ -171,8 +178,8 @@ exports.handler = async (event, context) => {
 
   await initDatabase();
 
-  // Route handling
-  if (path === '/api/trip-options' && method === 'GET') {
+  // Route handling - handle both /trip-options and /api/trip-options
+  if ((path === '/trip-options' || path === '/api/trip-options') && method === 'GET') {
     return {
       statusCode: 200,
       headers,
@@ -180,7 +187,7 @@ exports.handler = async (event, context) => {
     };
   }
 
-  if (path === '/api/votes' && method === 'POST') {
+  if ((path === '/votes' || path === '/api/votes') && method === 'POST') {
     try {
       const { name, rankings, comments } = JSON.parse(event.body);
 
@@ -245,7 +252,7 @@ exports.handler = async (event, context) => {
     }
   }
 
-  if (path === '/api/votes' && method === 'GET') {
+  if ((path === '/votes' || path === '/api/votes') && method === 'GET') {
     try {
       const allVotes = await sql`SELECT * FROM votes ORDER BY submitted_at DESC`;
       return {
@@ -262,7 +269,7 @@ exports.handler = async (event, context) => {
     }
   }
 
-  if (path === '/api/results' && method === 'GET') {
+  if ((path === '/results' || path === '/api/results') && method === 'GET') {
     try {
       const allVotes = await sql`SELECT * FROM votes`;
       
