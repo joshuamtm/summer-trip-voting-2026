@@ -140,8 +140,8 @@ exports.handler = async (event, context) => {
   // CORS headers
   const headers = {
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, X-Admin-Password',
+    'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
     'Content-Type': 'application/json',
   };
 
@@ -302,6 +302,36 @@ exports.handler = async (event, context) => {
         statusCode: 500,
         headers,
         body: JSON.stringify({ error: 'Failed to calculate results' }),
+      };
+    }
+  }
+
+  // Admin endpoint to clear all votes
+  if ((path === '/admin/clear-votes' || path === '/api/admin/clear-votes') && method === 'DELETE') {
+    const adminPassword = event.headers['x-admin-password'] || event.headers['X-Admin-Password'];
+    
+    // Check admin password (you should change this password!)
+    if (adminPassword !== 'summer2026admin') {
+      return {
+        statusCode: 401,
+        headers,
+        body: JSON.stringify({ error: 'Unauthorized' }),
+      };
+    }
+
+    try {
+      await sql`DELETE FROM votes`;
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({ message: 'All votes have been cleared successfully' }),
+      };
+    } catch (error) {
+      console.error('Error clearing votes:', error);
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({ error: 'Failed to clear votes' }),
       };
     }
   }
