@@ -144,19 +144,35 @@ const VotingForm: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-3xl font-bold text-center mb-4 text-gray-800">
-        Summer 2026 Group Trip Planning
+        Let's Vote on Our Epic Summer 2026 Adventure! 🗳️
       </h1>
       
       <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
-        <h2 className="text-lg font-semibold text-green-800 mb-3">What We're Planning</h2>
+        <h2 className="text-lg font-semibold text-green-800 mb-3">Hey everyone!</h2>
         <p className="text-gray-700 mb-3">
-          This is what we are thinking about for next summer (late August 2026), and we are looking for a sense of what people would like most. 
-          We have three distinct options, each offering a different type of experience and level of commitment.
+          Jessica and I have been brainstorming about our big group trip for next summer (targeting the second half of August 2026), 
+          and we've narrowed it down to three amazing options. Since we want to find something that works for as many people as possible, 
+          we built this quick voting app to gather everyone's preferences.
         </p>
-        <p className="text-gray-700">
-          Please rank these three options in order of your preference and provide any comments you have. Feel free to share new ideas, 
-          concerns about specific options, or any other thoughts that would help us plan the perfect group trip!
+        
+        <div className="my-4 space-y-2">
+          <p className="text-gray-700 font-medium">The three finalists are:</p>
+          <p className="text-gray-700">🏡 <strong>Option 1: Berkshires House Rental</strong> - Rent a big house for 2 weeks where people can come and go as their schedules allow.</p>
+          <p className="text-gray-700">🥾 <strong>Option 2: Inn-to-Inn AT Hike</strong> - A 10-12 day hiking adventure along the Appalachian Trail through Massachusetts.</p>
+          <p className="text-gray-700">🛶 <strong>Option 3: Boundary Waters Canoe Trip</strong> - A week-ish wilderness adventure in Minnesota's Boundary Waters.</p>
+        </div>
+        
+        <p className="text-gray-700 mb-3">
+          Check out the detailed descriptions below, rank them in order of your preference (even if you're not 100% sure you can make it), 
+          add your name and any comments/concerns/excited reactions, and hit submit!
         </p>
+        
+        <p className="text-gray-700 italic">
+          Remember - expressing interest doesn't lock you in, but it helps us gauge what the group is most excited about. 
+          Can't wait to adventure with you all next summer!
+        </p>
+        
+        <p className="text-gray-700 font-semibold mt-3">- J & J</p>
       </div>
 
       <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
